@@ -1,0 +1,29 @@
+name: Auto Commit LeetCode Solutions
+
+on:
+  push:
+    branches:
+      - main  # Jab manually kuch push ho, tab bhi ye trigger hoga
+  schedule:
+    - cron: '*/5 * * * *'  # Har 5 minutes me push karega
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+
+      - name: Add & Commit Changes
+        run: |
+          git add .
+          git commit -m "Auto-update LeetCode solutions $(date +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
+
+      - name: Push Changes
+        run: git push
+
