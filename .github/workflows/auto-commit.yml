@@ -3,13 +3,16 @@ name: Auto Commit LeetCode Solutions
 on:
   push:
     branches:
-      - main  # Jab manually kuch push ho, tab bhi ye trigger hoga
+      - main
   schedule:
     - cron: '*/5 * * * *'  # Har 5 minutes me push karega
 
 jobs:
   auto-commit:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # ⚡ Ye permission add karni zaroori hai
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -26,4 +29,3 @@ jobs:
 
       - name: Push Changes
         run: git push
-
