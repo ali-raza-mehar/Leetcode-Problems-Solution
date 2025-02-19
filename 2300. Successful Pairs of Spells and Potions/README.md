@@ -16,12 +16,16 @@ Return an integer array pairs of length n where pairs[i] is the number of potion
 Example 1:
 
 Input: spells = [5,1,3], potions = [1,2,3,4,5], success = 7
+
 Output: [4,0,3]
+
 Explanation:
 - 0th spell: 5 * [1,2,3,4,5] = [5,10,15,20,25]. 4 pairs are successful.
 - 1st spell: 1 * [1,2,3,4,5] = [1,2,3,4,5]. 0 pairs are successful.
 - 2nd spell: 3 * [1,2,3,4,5] = [3,6,9,12,15]. 3 pairs are successful.
 Thus, [4,0,3] is returned.
+
+
 Example 2:
 
 Input: spells = [3,1,2], potions = [8,5,8], success = 16
