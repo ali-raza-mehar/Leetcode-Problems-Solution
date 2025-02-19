@@ -55,3 +55,6 @@ m == potions.length
 ----------------------------------------------------------
                                          idean behind the problem
 ----------------------------------------------------------
+
+krna ye hai k ap ny spells array k hr element ko pic krna hai phir uski potions array k hr element k sath multiple krna hai aur check krna (elementsOfSpells * potions[i] >= sucsess) 
+k kitny pairs success sy greater ya euqal hain ye btana hai bs
